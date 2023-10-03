@@ -2,10 +2,7 @@ package test;
 
 import data.DataHelper;
 import data.SQLHelper;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -18,8 +15,8 @@ public class BankLoginTest {
     void tearDown() {
         cleanAuthCodes();
     }
-    @AfterEach
-    void tearDownAll() {
+    @AfterAll
+    static void tearDownAll() {
         cleanDatabase();
     }
     @BeforeEach
